@@ -1,0 +1,42 @@
+html
+  overflow-x: hidden
+  max-width: 100vw
+  scroll-behavior: smooth
+  color: $black
+  font-variant-numeric: lining-nums
+  &.js-no-scroll
+    overflow-y: hidden
+
+
+body
+  overflow: clip
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+  background-color: $bg
+
+
+main.main
+  display: flex
+  flex-direction: column
+  flex-grow: 1
+  gap: 120px
+  background-color: $bg
+  padding-bottom: 144px
+  @media (max-width: $width-tablet)
+    padding-bottom: 96px
+  @media (max-width: $width-mobile)
+    gap: 80px
+    padding-bottom: 80px
+
+
+body.body-noMain
+  animation: transitionIn 0.75s
+
+@keyframes transitionIn
+  from
+    opacity: 0
+    transform: translateY(-10px)
+  to
+    opacity: 1
+    transform: translateY(0)

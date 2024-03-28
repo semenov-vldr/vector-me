@@ -1,0 +1,70 @@
+.hidden
+  display: none !important
+
+.visually-hidden
+  position: absolute
+  width: 1px
+  height: 1px
+  margin: -1px
+  border: 0
+  padding: 0
+  white-space: nowrap
+  clip-path: inset(100%)
+  clip: rect(0 0 0 0)
+  overflow: hidden
+
+section
+  scroll-margin: 130px
+  @media (max-width: $width-mobile)
+    scroll-margin: 80px
+
+
+.title-section
+  font-size: 32px
+  margin-bottom: 32px
+  @media (max-width: $width-mobile)
+    margin-bottom: 24px
+    font-size: 24px
+
+.flex-center
+  display: flex
+  align-items: center
+  justify-content: center
+
+
+.button
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: center
+  font-weight: 500
+  padding: 14px 32px
+  min-height: 42px
+  transition: $transition
+  line-height: 1
+  width: fit-content
+  font-size: 14px
+  border-radius: 32px
+  user-select: none
+  overflow: hidden
+  white-space: nowrap
+
+
+
+
+.scroll-margin
+  scroll-margin: 120px
+  @media (max-width: $width-mobile)
+    scroll-margin: 70px
+
+.desktop-hidden
+  @media (min-width: $width-mobile)
+    display: none
+
+.mobile-hidden
+  @media (max-width: $width-mobile)
+    display: none
+
+.tablet-hidden
+  @media (min-width: $width-tablet)
+    display: none

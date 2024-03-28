@@ -1,0 +1,44 @@
+include ../blocks/mixins
+
+block variables
+    - var activePage = activePage
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        title #{title}
+        //[if IE]
+        meta(http-equiv='X-UA-Compatible' content="IE = edge")
+
+        meta(name="viewport" content="width=device-width,initial-scale=1 shrink-to-fit=no")
+        //meta(property="og:title" content="Дизайн интерьера — Евгения Заболоцкая")
+        //meta(property="og:description" content="Разрабатываем дизайн интерьера квартир, домов и общественных помещений")
+        //meta(property="og:image" content="./assets/img/icons/logo-dark.svg")
+
+        //favicon
+        link(rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/favicon-180x180.ico")
+        link(rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.ico")
+        link(rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.ico")
+
+
+        // AOS css
+        link(rel="stylesheet" type='text/css' href="https://unpkg.com/aos@2.3.1/dist/aos.css")
+
+        link(rel="stylesheet" type='text/css' href="./assets/css/libs.min.css")
+        link(rel="stylesheet" type='text/css' href="./assets/css/main.css")
+
+        //[if lt IE 9]
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js")
+        //[endif]
+
+
+    body
+        include ../blocks/header/header
+        main.main
+            block content
+        include ../blocks/footer/footer
+        #contacts
+    script(src="./assets/scripts/libs.min.js")
+    script(src="./assets/scripts/main.js" type="module")
+    block script

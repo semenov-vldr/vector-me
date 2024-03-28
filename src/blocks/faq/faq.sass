@@ -1,0 +1,82 @@
+.faq
+
+  &__container
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    gap: 32px
+    margin: 0 auto
+    overflow: hidden
+    @media (max-width: $width-mobile)
+      gap: 16px
+
+  h2
+    margin: 0
+
+  &__list
+    max-width: 700px
+    list-style-type: none
+    display: flex
+    flex-direction: column
+
+  &__item
+    padding: 32px 0 16px
+    border-bottom: 1px solid rgba(#fff, 0.4)
+    overflow: hidden
+    @media (max-width: $width-mobile)
+      padding: 20px 0 12px
+    &.js-faq-active .faq__content
+      max-height: 800px
+      padding: 16px 0 0
+      @media (max-width: $width-mobile)
+        padding: 12px 0 0
+    &.js-faq-active .faq__title,
+    &:hover .faq__title
+      color: #fff
+    &.js-faq-active .faq__title::after
+      transform: rotate(-180deg)
+
+
+
+  &__title
+    @include fontSize(16, 20)
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: space-between
+    column-gap: 20px
+    cursor: pointer
+    color: white
+    transition: $transition
+    &::after
+      content: ""
+      display: inline-block
+      //background-image: url('../img/icons/arrow-down.svg')
+      background-repeat: no-repeat
+      background-size: cover
+      background-position: center
+      width: 12px
+      height: 8px
+      transition: 0.3s
+      flex: 0 0 12px
+
+  &__content
+    @include fontSize(14, 18)
+    padding: 0
+    max-height: 0
+    transition: $transition
+    overflow: hidden
+    @media (max-width: $width-mobile)
+      padding: 0
+
+  &__actions
+    margin: 48px auto 0
+    display: flex
+    flex-direction: column
+    text-align: center
+    align-items: center
+    gap: 32px
+    @include fontSize(16, 24)
+    @media (max-width: $width-mobile)
+      margin-top: 24px
+      gap: 16px
