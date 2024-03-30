@@ -1,9 +1,17 @@
 .about
   color: $white
 
+  &__container
+    padding: 0
+
   &__desc
     max-width: 100%
     text-wrap: balance
+    padding: 0 56px
+    @media (max-width: $width-tablet)
+      padding: 0 32px
+    @media (max-width: $width-mobile)
+      padding: 0 16px
 
   &__list
     margin-top: 56px

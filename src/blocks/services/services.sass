@@ -5,6 +5,11 @@
     display: grid
     grid-template-columns: repeat(3, 1fr)
     grid-gap: 32px
+    @media(max-width: $width-tablet)
+      grid-template-columns: 1fr
+      gap: 24px
+    @media(max-width: $width-mobile)
+      gap: 12px
 
   &-item
     background-color: $accent
@@ -21,3 +26,4 @@
 
     &__price
       @include fontSize(32, 48)
+      white-space: nowrap
