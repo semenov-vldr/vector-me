@@ -247,3 +247,22 @@ function hideLoader() {
 }
 ;
 window.addEventListener('load', hideLoader);
+"use strict";
+
+var portfolio = document.querySelector(".portfolio");
+if (portfolio) {
+  var portfolioTabs = portfolio.querySelectorAll(".portfolio__tab");
+  var portfolioLists = portfolio.querySelectorAll(".portfolio__list");
+  portfolioTabs.forEach(function (portfolioTab, index) {
+    portfolioTab.addEventListener("click", function () {
+      portfolioTabs.forEach(function (portfolioTab) {
+        return portfolioTab.classList.remove("is-active");
+      });
+      portfolioTab.classList.add("is-active");
+      portfolioLists.forEach(function (portfolioList) {
+        return portfolioList.classList.add("hidden");
+      });
+      portfolioLists[index].classList.remove("hidden");
+    });
+  });
+}
