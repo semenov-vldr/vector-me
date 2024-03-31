@@ -1,0 +1,69 @@
+.portfolio
+  background-color: $white
+  overflow: hidden
+
+  &__title
+    margin-bottom: 16px
+
+  &__tabs
+    display: flex
+    align-items: center
+    gap: 16px 32px
+    justify-content: center
+    margin-bottom: 32px
+    @media (max-width: $width-mobile)
+      flex-direction: column
+      width: 100%
+
+  &__tab
+    border: 1px solid #192234
+    transition: $transition
+    min-width: 170px
+    @media (max-width: $width-mobile)
+      width: 100%
+    &.is-active,
+    &:hover
+      background-color: #192234
+      color: $white
+
+  &__list
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-gap: 32px
+    animation: showContent 0.6s forwards
+    @media (max-width: $width-mobile)
+      grid-gap: 14px
+      grid-template-columns: repeat(2, 1fr)
+    &.first .portfolio__item
+      background-color: #007aff
+    &.second .portfolio__item
+      background-color: #7b00ff
+    &.third .portfolio__item
+      background-color: #ffcc00
+
+
+    @keyframes showContent
+      0%
+        transform: translateY(-20px)
+        opacity: 0
+      100%
+        transform: translateY(0)
+        opacity: 1
+
+
+
+
+  &__item
+    width: 100%
+    max-width: 380px
+    border-radius: 44px
+    aspect-ratio: 1 / 1
+    @media (max-width: $width-mobile)
+      &:nth-child(n+5)
+        display: none
+
+  &__show-more
+    display: none
+    margin: 24px auto 0
+    @media (max-width: $width-mobile)
+      display: block
