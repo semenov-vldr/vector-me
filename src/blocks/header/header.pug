@@ -1,7 +1,10 @@
 header.header
     .header__container
-        a.header__logo(href='index.html') LOGO
-            //include ../../img/icons/logo-light.svg
+        a.header__logo(href='/')
+            picture
+                source(srcset=`./assets/img/logo-mobile.svg` media="(max-width: 480px)")
+                img(src=`./assets/img/logo-desktop.svg` alt="Логотип Векторми")
+
 
         nav.header__nav.header-nav
             ul.header-nav__list
@@ -18,7 +21,7 @@ header.header
                 li.header-nav__item
                     a.header-nav__link(href='##') Контакты
 
-        a.button.button--outline.header__button(href="##") Узнать стоимость
+        a.button.button--outline.header__button(href="##") Рассчитать стоимость
 
         button(type="button").header__burger
             span.header__burger-line.header__burger-line-1
