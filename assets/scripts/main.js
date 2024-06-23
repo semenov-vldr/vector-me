@@ -187,6 +187,13 @@ phoneInputs.forEach(function (input) {
 });
 "use strict";
 
+var brief = document.getElementById("brief");
+if (brief) {
+  var closeBrief = brief.querySelector(".brief__back");
+  closeBrief.addEventListener("click", function () {});
+}
+"use strict";
+
 var faq = document.getElementById("faq");
 if (faq) {
   var accordionItems = faq.querySelectorAll('.faq__item'); // список элементов аккордиона
@@ -233,7 +240,6 @@ function mobileNav() {
   });
 }
 mobileNav();
-"use strict";
 "use strict";
 
 function hideLoader() {
