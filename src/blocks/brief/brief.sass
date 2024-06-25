@@ -8,12 +8,13 @@
   transition: $transition
   opacity: 0
   visibility: hidden
+  overflow-x: hidden
+  overflow-y: auto
   transform: translateY(-100%)
   &.js-visible
     opacity: 1
     visibility: visible
     transform: translateY(0)
-
 
   &__container
     max-width: 600px
@@ -29,7 +30,6 @@
       transform: translateY(-20%)
     &:hover
       color: $lightgrey
-
 
   &__content
     display: flex
@@ -83,6 +83,22 @@
           left: 50%
           transform: translate(-50%, -50%)
           background-color: $lightgrey
+
+
+  &__form
+    display: flex
+    flex-direction: column
+    gap: 16px
+    align-items: center
+
+    &-title
+      @include fontSize(16, 24)
+
+    label,
+    button[type="submit"]
+      width: 100%
+      max-width: none !important
+
 
 
 
