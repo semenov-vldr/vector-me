@@ -189,8 +189,19 @@ phoneInputs.forEach(function (input) {
 
 var brief = document.getElementById("brief");
 if (brief) {
-  var closeBrief = brief.querySelector(".brief__back");
-  closeBrief.addEventListener("click", function () {});
+  var openBriefBtns = document.querySelectorAll(".js-brief-open");
+  console.log(openBriefBtns);
+  openBriefBtns.forEach(function (openBriefBtn) {
+    openBriefBtn.addEventListener("click", function () {
+      brief.classList.add("js-visible");
+      blockScrollBody();
+    });
+  });
+  var closeBriefBtn = brief.querySelector(".brief__back");
+  closeBriefBtn.addEventListener("click", function () {
+    brief.classList.remove("js-visible");
+    unblockScrollBody();
+  });
 }
 "use strict";
 
